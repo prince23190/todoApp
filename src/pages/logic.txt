@@ -1,0 +1,22 @@
+ function AddTodo() {
+    if (!InputData) {
+      alert("Please Put Some Entries In Todo List.");
+    }
+     else {
+      setItems((oldItems) => {
+          return [...oldItems, InputData];
+      });
+      setInputData("");
+    }
+  }
+function RemoveTodo() {
+    setItems(() => {
+        return [];
+    });
+}
+function DeleteTodo(DeleteId) {
+    const updateItems = Items.filter((Elem, ind) => {
+           return ind !== DeleteId
+    })
+    setItems(updateItems);
+}
